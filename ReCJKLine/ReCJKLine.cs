@@ -35,6 +35,10 @@ public class ReCJKLine
     _keyMap =new Dictionary<ShortcutKey, Action<ConsoleKeyInfo>>();
     _keyMap[new ShortcutKey(ConsoleKey.LeftArrow, false, false, false  )] = MoveLeft;
     _keyMap[new ShortcutKey(ConsoleKey.RightArrow, false, false, false )] = MoveRight;
+    _keyMap[new ShortcutKey(ConsoleKey.UpArrow, false, false, false )] = (_) => {};
+    _keyMap[new ShortcutKey(ConsoleKey.DownArrow, false, false, false )] = (_) => {};
+    _keyMap[new ShortcutKey(ConsoleKey.Tab, false, false, false )] = (_) => {};
+    _keyMap[new ShortcutKey(ConsoleKey.Escape, false, false, false )] = (_) => {};
     _keyMap[new ShortcutKey(ConsoleKey.Backspace, false, false, false )] = Backspace;
     _keyMap[new ShortcutKey(ConsoleKey.B, false, false, true )] = MoveLeft;
     _keyMap[new ShortcutKey(ConsoleKey.F, false, false, true )] = MoveRight;
