@@ -170,7 +170,15 @@ public class ReCJKLine
 
   Action<ConsoleKeyInfo> LookupHandler(ConsoleKeyInfo kinfo)
   {
-    return _keyMap.GetValueOrDefault(new ShortcutKey(kinfo), WriteChar);
+    Action<ConsoleKeyInfo>? action;
+    _keyMap.TryGetValue(new ShortcutKey(kinfo), out action);
+    if (action != null)
+    {
+      return action;
+    }
+    if (kinfo.Modifiers == 0)
+      return WriteChar;
+    return (_) =>{};
   }
 
 
