@@ -175,8 +175,16 @@ public class ReCJKLine
     return (ch >= '\u3000' && ch  <= '\u9FFF');
   }
 
+  void ResetState()
+  {
+    _chars.Clear();
+    _widths.Clear();
+    _pos = 0;
+  }
+
   public string ReadLine(string prompt)
   {
+    ResetState();
     Console.Write(prompt);
     while(true)
     {
