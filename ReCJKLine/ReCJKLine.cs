@@ -176,7 +176,7 @@ public class ReCJKLine
     {
       return action;
     }
-    if (kinfo.Modifiers == 0)
+    if (kinfo.Modifiers == 0 || kinfo.Modifiers == ConsoleModifiers.Shift)
       return WriteChar;
     return (_) =>{};
   }
